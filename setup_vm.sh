@@ -47,6 +47,11 @@ install_tools() {
     echo "-> Installing zoxide..."
     # We run this WITHOUT sudo so it installs to the user's home directory (~/.local/bin)
     curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+    
+    # --- MINIMAL MODIFICATION START ---
+    echo "-> Exporting PATH for current session to include ~/.local/bin..."
+    export PATH="$HOME/.local/bin:$PATH"
+    # --- MINIMAL MODIFICATION END ---
 
     echo "## ✅ Installation complete."
     echo "---"
@@ -59,7 +64,9 @@ main() {
     
     echo "*******************************************************"
     echo "* Setup Finished!                                     *"
-    echo "* Note: Ensure ~/.local/bin is in your PATH for zoxide.*"
+    echo "* Note: ~/.local/bin is added to PATH for this script.*"
+    echo "* To make it permanent, you must manually add the     *"
+    echo "* 'export PATH...' line to your shell's config file.  *"
     echo "*******************************************************"
 }
 
