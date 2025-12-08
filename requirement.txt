@@ -1,0 +1,4 @@
+smb -add
+openssh -add
+ifconfig -add
+
