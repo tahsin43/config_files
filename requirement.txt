@@ -2,3 +2,6 @@ smb -add
 openssh -add
 ifconfig -add
 
+
+change to correct nvim install
+> sudo snap install nvim --classic
